@@ -8,10 +8,10 @@
     </feature>
     <name>Nearby</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        A project that uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, Windows, and Windows Phone. Developed by Micaiah Wiafe
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
-        Geolocation Mobile Application Project by Micaiah Wiafe. Ashesi University
+        PhoneGap Team
     </author>
     <content src="index.html" />
     <icon src="icon.png" />
