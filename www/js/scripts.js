@@ -1,14 +1,14 @@
 var map;
 var markers = [];
 
-function myMap() {
-    var mapOptions = {
-        center: new google.maps.LatLng(51.5, -0.12),
-        zoom: 10,
-        mapTypeId: google.maps.MapTypeId.HYBRID
-    }
- map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
+// function myMap() {
+//     var mapOptions = {
+//         center: new google.maps.LatLng(51.5, -0.12),
+//         zoom: 10,
+//         mapTypeId: google.maps.MapTypeId.HYBRID
+//     }
+//  map = new google.maps.Map(document.getElementById("map"), mapOptions);
+// }
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -201,11 +201,11 @@ function initAutocomplete() {
 }
 
 function signup(){
-  var firstname = document.getElementById("first_name");
-  var lastname  = document.getElementById("last_name");
-  var email  = document.getElementById("email");
-  var password  = document.getElementById("password");
-  var phone  = document.getElementById("phone");
+  var firstname = document.getElementById("first_name").value;
+  var lastname  = document.getElementById("last_name").value;
+  var email  = document.getElementById("email").value;
+  var password  = document.getElementById("password").value;
+  var phone  = document.getElementById("phone").value;
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
         
@@ -213,9 +213,12 @@ function signup(){
             if (this.readyState == 4 && this.status == 200) {
                 //document.getElementById("txtHint").innerHTML = this.responseText;
                 alert("User added successfully");
+                window.location="login.html";
+            }else{
+              //alert("could not be added");
             }
         };
-        xmlhttp.open("GET","/signup.php?firstname="+first+"&lastname="+last+"&email="+email+"&password="+password+"&email="+email+"&phone"+phone,true);
+        xmlhttp.open("GET","signup.php?firstname="+firstname+"&lastname="+lastname+"&email="+email+"&password="+password+"&email="+email+"&phone"+phone,true);
         xmlhttp.send();
     
 }
@@ -229,10 +232,11 @@ function login(){
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 //document.getElementById("txtHint").innerHTML = this.responseText;
-                alert("User added successfully");
+                alert("User found");
+                window.location="index.html";
             }
         };
-        xmlhttp.open("GET","../login.php?email="+email+"&password="+password,true);
+        xmlhttp.open("GET","login.php?email="+email+"&password="+password,true);
         xmlhttp.send();
     
 }

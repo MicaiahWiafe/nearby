@@ -17,8 +17,7 @@ $result = mysqli_query($con,$sql);
 
 
  while($row = mysqli_fetch_array($result)) {
-     //echo "success";
-     header("login.html");
+     echo "success";
  }
 
 mysqli_close($con);
