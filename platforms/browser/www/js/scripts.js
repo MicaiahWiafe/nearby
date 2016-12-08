@@ -40,3 +40,23 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: The Geolocation service failed.' :
                         'Error: Your browser doesn\'t support geolocation.');
 }
+
+function signup(){
+  var first = document.getElementById("first_name");
+  var last  = document.getElementById("last_name");
+  var email  = document.getElementById("email");
+  var password  = document.getElementById("password");
+  var phone  = document.getElementById("phone");
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                //document.getElementById("txtHint").innerHTML = this.responseText;
+                alert("User added successfully");
+            }
+        };
+        xmlhttp.open("GET","../signup.php?first="+first+"&last="+last+"&email="+email+"&password="+password+"&email="+email+"&phone"+phone,true);
+        xmlhttp.send();
+    }
+}

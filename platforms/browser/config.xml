@@ -8,7 +8,7 @@
     </feature>
     <name>Nearby</name>
     <description>
-        A project that uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, Windows, and Windows Phone. Developed by Micaiah Wiafe
+        Hello World sample application that responds to the deviceready event.
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
