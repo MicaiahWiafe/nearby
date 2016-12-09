@@ -34,8 +34,8 @@
 
       <ul class="tabs tabs-transparent">
         <li class="tab"><a class="active" href="#test1">Home</a></li>
-        <li class="tab"><a href="#test2">popular</a></li>
-        <li class="tab"><a href="#test3">Me</a></li>
+        <li class="tab"><a href="#test2">history</a></li>
+       <!--  <li class="tab"><a href="#test3">Me</a></li> -->
         
       </ul>
     </div>
@@ -60,9 +60,29 @@
     </div>
   </div>
 
-  <div id="test2" class="col s12">Test 2</div>
+  <div class="row">
+  <div id="test2" class="col s10 offset-s1">
+    <table>
+        <thead>
+          <tr>
+              <th data-field="date">Date</th>
+              <th data-field="item">Item</th>
+              <th data-field="action">Action</th>
+          </tr>
+        </thead>
 
-  <div id="test3" class="col s12">Test 3</div>
+        <tbody>
+          <tr>
+            <td>Fri, 9 Dec</td>
+            <td>ATM</td>
+            <td><a class="waves-effect waves-light btn black" onclick="">Search </a></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  </div>
+
+  <!-- <div id="test3" class="col s12">Test 3</div> -->
 
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

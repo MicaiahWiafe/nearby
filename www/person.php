@@ -25,7 +25,7 @@ class person extends adb{
 
 	function signup($firstname,$lastname,$email,$password,$phone){
 		$username = $firstname.$lastname;
-		$strQuery="INSERT INTO `user`(`first_name`, `surname`, `email`, `password`, `phone`, `username`) VALUES ($firstname, $lastname, $email, $password, $phone,$username)";
+		$strQuery="INSERT INTO `user`(`first_name`, `surname`, `email`, `password`, `phone`, `username`) VALUES ('$firstname', '$lastname', '$email', '$password', '$phone','$username')";
 		return $this->query($strQuery);
 	}
 }

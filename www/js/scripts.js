@@ -200,27 +200,48 @@ function initAutocomplete() {
   });
 }
 
-function signup(){
-  var firstname = document.getElementById("first_name").value;
-  var lastname  = document.getElementById("last_name").value;
-  var email  = document.getElementById("email").value;
-  var password  = document.getElementById("password").value;
-  var phone  = document.getElementById("phone").value;
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
+// function signup(){
+//   firstname = document.getElementById("first_name").innerHTML;
+//   lastname  = document.getElementById("last_name").innerHTML;
+//   email  = document.getElementById("email").innerHTML;
+//   password  = document.getElementById("password").innerHTML;
+//   phone  = document.getElementById("phone").innerHTML;
+//             // code for IE7+, Firefox, Chrome, Opera, Safari
+//             xmlhttp = new XMLHttpRequest();
         
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                //document.getElementById("txtHint").innerHTML = this.responseText;
-                alert("User added successfully");
-                window.location="login.html";
-            }else{
-              //alert("could not be added");
-            }
-        };
-        xmlhttp.open("GET","signup.php?firstname="+firstname+"&lastname="+lastname+"&email="+email+"&password="+password+"&email="+email+"&phone"+phone,true);
-        xmlhttp.send();
+//         xmlhttp.onreadystatechange = function() {
+//             if (this.readyState == 4 && this.status == 200) {
+//                 //document.getElementById("txtHint").innerHTML = this.responseText;
+//                 alert("User added successfully");
+//                 window.location="login.html";
+//             }else{
+//               //alert("could not be added");
+//             }
+//         };
+//         xmlhttp.open("GET","signup.php?firstname="+firstname+"&lastname="+lastname+"&email="+email+"&password="+password+"&email="+email+"&phone"+phone,true);
+//         xmlhttp.send();
     
+// }
+
+function signupComplete(xhr,status){
+  if (status !="success"){
+    alert("status is "+status);
+    return;
+  }
+  console.log(xhr.responseText);
+  window.location="login.html";
+}
+
+function signup(){
+  firstname = $("#first_name").val();
+  lastname  = $("#last_name").val();
+  email  = $("#email").val();
+  password  = $("#password").val();
+  phone  = $("#phone").val();
+        
+        pageUrl="signup.php?firstname="+firstname+"lastname="+lastname+"email="+email+"password="+password+"email="+email+"phone"+phone;
+        $.ajax(pageUrl,{async:true,complete:signupComplete});
+        //alert("Registered");    
 }
 
 function login(){
